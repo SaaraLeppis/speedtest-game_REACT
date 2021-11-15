@@ -1,1 +1,2 @@
-export const circles = [{ id: 1, color: "#c97dd8" }, { id: 2, color: "#EEEE9B" }, { id: 3, color: "#98fb98" }, { id: 4, color: "#8fcbe2" }]
+export const circles = [{ id: 1, color: "#de1d1d" }, { id: 2, color: "#F2D648" }, { id: 3, color: "#06804B" }, { id: 4, color: "#1186FA" }]
+

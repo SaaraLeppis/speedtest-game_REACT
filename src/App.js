@@ -25,12 +25,7 @@ class App extends Component {
       score: this.state.score + 10,
     });
   };
-  popupHandler = (e) => {
-    e.preventDefault();
-    this.setState({
-      showPopup: true
-    })
-  }
+
   nextCircle = () => {
     let nextActive;
     do {
@@ -48,21 +43,20 @@ class App extends Component {
 
   startHandler = () => {
     this.nextCircle();
-
-    this.setState({
-
-    })
   }
 
   stopHandler = () => {
     clearTimeout(this.timer);
+    this.setState({
+      showpopup: true,
+    })
   }
 
   render() {
     return (
       <div>
         {this.state.showpopup && <Popup score={this.state.score} />}
-        <div>
+        <div className="text">
           <h1>Speed Game</h1>
           <p> Your score: {this.state.score}</p>
         </div>

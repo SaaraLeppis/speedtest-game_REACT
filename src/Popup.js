@@ -7,13 +7,11 @@ const closeHandler = () => {
 const Popup = (props) => {
     return (
         <div className="overlay">
-            <button onClick={closeHandler} className="close-popup">X</button>
-            <div className="popup">
 
-                <h2>Game over! </h2>
-                <div className="score">
-                    <p className="score">Your score<span>{props.score}</span></p>
-                </div>
+            <div className="popup">
+                <button onClick={closeHandler} className="close-popup">X</button>
+                <h2>Game over</h2>
+                <p className="score">Your score: <span>{props.score}</span></p>
             </div >
         </div>
     );
