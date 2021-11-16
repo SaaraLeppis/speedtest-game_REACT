@@ -15,10 +15,9 @@ class App extends Component {
     score: 0,
     current: 0,
     showpopup: false,
+    pace: 1500,
   };
-
   timer = undefined;
-  pace = 1500;
 
   clickHandler = () => {
     this.setState({
@@ -35,9 +34,10 @@ class App extends Component {
 
     this.setState({
       current: nextActive,
+      pace: this.state.pace * 0.95,
     });
-    this.pace *= 0.95;
-    this.timer = setTimeout(this.nextCircle, this.pace);
+
+    this.timer = setTimeout(this.nextCircle, this.state.pace);
     //console.log("active crcle is ", this.state.current);
   }
 
@@ -49,13 +49,21 @@ class App extends Component {
     clearTimeout(this.timer);
     this.setState({
       showpopup: true,
+      current: 0,
+    })
+  }
+  closeHandler = () => {
+    this.setState({
+      showpopup: false,
+      score: 0,
+      pace: 1500,
     })
   }
 
   render() {
     return (
       <div>
-        {this.state.showpopup && <Popup score={this.state.score} />}
+        {this.state.showpopup && <Popup score={this.state.score} close={this.closeHandler} />}
         <div className="text">
           <h1>Speed Game</h1>
           <p> Your score: {this.state.score}</p>

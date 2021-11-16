@@ -26,7 +26,7 @@ h1::before {
   border-bottom: 5px double #622be2;
   position: absolute;
   width: 200px;
-  padding-top: 1em;
+  padding-bottom: 1em;
   margin-left: -3em;
 }
 h1::after {
