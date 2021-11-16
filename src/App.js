@@ -19,7 +19,12 @@ class App extends Component {
   };
   timer = undefined;
 
-  clickHandler = () => {
+  clickHandler = (id) => {
+    console.log("you clicked: ", id);
+    if (this.state.current !== id) {
+      this.stopHandler();
+      return;
+    }
     this.setState({
       score: this.state.score + 10,
     });
@@ -31,14 +36,13 @@ class App extends Component {
       nextActive = getRandInteger(1, 4)
     }
     while (nextActive === this.state.current);
-
     this.setState({
       current: nextActive,
       pace: this.state.pace * 0.95,
     });
 
     this.timer = setTimeout(this.nextCircle, this.state.pace);
-    //console.log("active crcle is ", this.state.current);
+    //console.log("active circle is ", this.state.current);
   }
 
   startHandler = () => {
@@ -52,6 +56,7 @@ class App extends Component {
       current: 0,
     })
   }
+
   closeHandler = () => {
     this.setState({
       showpopup: false,
@@ -72,7 +77,7 @@ class App extends Component {
           {circles.map((c) => (
             <Circle
               key={c.id} color={c.color} id={c.id}
-              click={this.clickHandler}
+              click={() => this.clickHandler(c.id)}
               active={this.state.current === c.id} />
           ))}
         </div>

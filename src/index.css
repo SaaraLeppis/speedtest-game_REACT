@@ -23,17 +23,18 @@ h2 {
 }
 h1::before {
   content: "";
-  border-bottom: 5px double #622be2;
+  border-bottom: 3px double #622be2;
+
   position: absolute;
   width: 200px;
-  padding-bottom: 1em;
+  padding-top: 0.9em;
   margin-left: -3em;
 }
 h1::after {
   content: "";
-  border-bottom: 5px double #622be2;
+  border-bottom: 3px double #622be2;
   position: absolute;
-  padding-top: 1em;
+  padding-top: 0.9em;
   width: 200px;
 }
 .text p,
