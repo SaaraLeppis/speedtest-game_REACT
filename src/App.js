@@ -3,6 +3,8 @@ import Circle from "./Circle";
 import "./App.css";
 import { circles } from "./circles";
 import Gameover from "./Gameover";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faVolumeUp } from '@fortawesome/free-solid-svg-icons';
 
 const getRandInteger = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min)
@@ -55,6 +57,7 @@ class App extends Component {
     console.log("active round is ", this.state.rounds);
   }
 
+
   startHandler = () => {
     this.nextCircle();
     this.setState({
@@ -100,6 +103,7 @@ class App extends Component {
         </div>
         <button disabled={this.state.gameOn} onClick={this.startHandler}>START</button>
         <button disabled={this.state.gameOff} onClick={this.stopHandler}>STOP</button>
+        <button><FontAwesomeIcon icon={faVolumeUp} /></button>
       </div>
     );
   }
