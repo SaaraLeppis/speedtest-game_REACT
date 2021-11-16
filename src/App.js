@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Circle from "./Circle";
 import "./App.css";
 import { circles } from "./circles";
-import Popup from "./Popup";
+import Gameover from "./Gameover";
 
 const getRandInteger = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min)
@@ -14,8 +14,11 @@ class App extends Component {
   state = {
     score: 0,
     current: 0,
-    showpopup: false,
+    gameover: false,
     pace: 1500,
+    rounds: 0,
+    gameOn: false,
+    gameOff: true,
   };
   timer = undefined;
 
@@ -27,10 +30,15 @@ class App extends Component {
     }
     this.setState({
       score: this.state.score + 10,
+      rounds: 0,
     });
   };
 
   nextCircle = () => {
+    if (this.state.rounds >= 5) {
+      this.stopHandler();
+      return;
+    }
     let nextActive;
     do {
       nextActive = getRandInteger(1, 4)
@@ -39,36 +47,45 @@ class App extends Component {
     this.setState({
       current: nextActive,
       pace: this.state.pace * 0.95,
+      rounds: this.state.rounds + 1,
     });
 
     this.timer = setTimeout(this.nextCircle, this.state.pace);
-    //console.log("active circle is ", this.state.current);
+    console.log("active circle is ", this.state.current);
+    console.log("active round is ", this.state.rounds);
   }
 
   startHandler = () => {
     this.nextCircle();
+    this.setState({
+      gameOn: true,
+      gameOff: false,
+    })
   }
 
   stopHandler = () => {
     clearTimeout(this.timer);
     this.setState({
-      showpopup: true,
+      gameover: true,
       current: 0,
+      gameOn: false,
+      gameOff: true,
     })
   }
 
   closeHandler = () => {
     this.setState({
-      showpopup: false,
+      gameover: false,
       score: 0,
       pace: 1500,
+      rounds: 0,
     })
   }
 
   render() {
     return (
       <div>
-        {this.state.showpopup && <Popup score={this.state.score} close={this.closeHandler} />}
+        {this.state.gameover && <Gameover score={this.state.score} close={this.closeHandler} />}
         <div className="text">
           <h1>Speed Game</h1>
           <p> Your score: {this.state.score}</p>
@@ -81,8 +98,8 @@ class App extends Component {
               active={this.state.current === c.id} />
           ))}
         </div>
-        <button onClick={this.startHandler}>START</button>
-        <button onClick={this.stopHandler}>STOP</button>
+        <button disabled={this.state.gameOn} onClick={this.startHandler}>START</button>
+        <button disabled={this.state.gameOff} onClick={this.stopHandler}>STOP</button>
       </div>
     );
   }

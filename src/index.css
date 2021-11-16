@@ -51,18 +51,20 @@ button {
   font-family: "Audiowide", display;
   font-size: 1.2em;
   background-color: rgb(32, 32, 32);
-  color: whitesmoke;
+  color: honeydew;
+
   padding: 1.2em 2em;
   margin: 1.5em;
   border-radius: 5px;
   justify-content: center;
   border: none;
   box-shadow: 0 0 5px black;
-  transition: all ease-in 0.2s;
+  transition: color ease-in 0.2s;
 }
 button:hover {
   box-shadow: 2px 2px 8px #622be2;
   opacity: 0.9;
+  color: greenyellow;
 }
 
 .circles {
@@ -81,7 +83,12 @@ button:hover {
   height: 200px;
   width: 200px;
   margin: 10px;
-  border: 0.2px solid #444444;
+  /*border: 0.2px solid #444444;*/
+  box-shadow: 0 0 10px grey;
+  cursor: pointer;
+}
+circle:active {
+  box-shadow: inset 0 0 40px green;
 }
 .active {
   box-shadow: 0 0 20px greenyellow;

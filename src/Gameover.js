@@ -6,7 +6,7 @@ import React from "react";
 /* button on click ={props.close}                 
 this was earlier: <button onClick={closeHandler} className="close-popup">X</button>
 */
-const Popup = (props) => {
+const Gameover = (props) => {
     return (
         <div className="overlay">
             <div className="popup">
@@ -18,4 +18,4 @@ const Popup = (props) => {
     );
 };
 
-export default Popup;
+export default Gameover;
