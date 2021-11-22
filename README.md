@@ -49,11 +49,13 @@ Basicly copied from my teacher @margittennosaar
 ## Some stuff to remember
 
 > `npm i --save @fortawesome/fontawesome-svg-core`
-> npm install --save @fortawesome/free-solid-svg-icons
-> npm install --save @fortawesome/react-fontawesome
+> 
+> `npm install --save @fortawesome/free-solid-svg-icons`
+> 
+> `npm install --save @fortawesome/react-fontawesome`
 
-> import ReactDOM from 'react-dom'
-> import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-> import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+> `import ReactDOM from 'react-dom'` 
+> `import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'` 
+> `import { faCoffee } from '@fortawesome/free-solid-svg-icons'` 
 
-> const element = <FontAwesomeIcon icon={faCoffee} />
+> `const element = <FontAwesomeIcon icon={faCoffee} />`
