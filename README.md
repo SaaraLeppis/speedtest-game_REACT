@@ -35,8 +35,10 @@ Enjoy playing:
 ## Credits for sound effects
 
 Sounds from opengameart.org
-["Happy Adveture (Loop)" by TinyWorlds licensed CC0](https://opengameart.org/content/happy-adventure-loop)
+["Happy Adveture (Loop)" by TinyWorlds licensed CC0](https://opengameart.org/content/happy-adventure-loop) 
+
 ["Cute Mission Complete: complete.wav" by Fupi licenced CC0](https://opengameart.org/content/cute-mission-complete)
+
 ["ping_pong_8bit_plop.ogg" from sounds_ping_pong_8bit collection by captaincrunch80](https://opengameart.org/content/3-ping-pong-sounds-8-bit-style)
 
 ## Authors
