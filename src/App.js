@@ -4,11 +4,18 @@ import "./App.css";
 import { circles } from "./circles";
 import Gameover from "./Gameover";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faVolumeUp } from '@fortawesome/free-solid-svg-icons';
+import { faBug } from '@fortawesome/free-solid-svg-icons';
+import clickSound from "./assets/sounds/ping_pong_8bit_plop.ogg";
+import backgroundMusic from "./assets/sounds/happy_adveture.mp3";
+import endSound from "./assets/sounds/complete.wav"
 
 const getRandInteger = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min)
 };
+let kierrokset = [];
+let backgroundSound = new Audio(backgroundMusic);
+let click = new Audio(clickSound);
+let end = new Audio(endSound);
 
 class App extends Component {
   //it doesnt have to be state, can e separated js file
@@ -25,8 +32,11 @@ class App extends Component {
   timer = undefined;
 
   clickHandler = (id) => {
+    click.play();
     console.log("you clicked: ", id);
+
     if (this.state.current !== id) {
+      end.play();
       this.stopHandler();
       return;
     }
@@ -57,8 +67,8 @@ class App extends Component {
     console.log("active round is ", this.state.rounds);
   }
 
-
   startHandler = () => {
+    backgroundSound.play();
     this.nextCircle();
     this.setState({
       gameOn: true,
@@ -67,6 +77,8 @@ class App extends Component {
   }
 
   stopHandler = () => {
+    backgroundSound.pause();
+    click.pause();
     clearTimeout(this.timer);
     this.setState({
       gameover: true,
@@ -91,6 +103,7 @@ class App extends Component {
         {this.state.gameover && <Gameover score={this.state.score} close={this.closeHandler} />}
         <div className="text">
           <h1>Speed Game</h1>
+          <p><FontAwesomeIcon icon={faBug} />   Catch the bugs  <FontAwesomeIcon icon={faBug} /></p>
           <p> Your score: {this.state.score}</p>
         </div>
         <div className="circles">
@@ -103,7 +116,6 @@ class App extends Component {
         </div>
         <button disabled={this.state.gameOn} onClick={this.startHandler}>START</button>
         <button disabled={this.state.gameOff} onClick={this.stopHandler}>STOP</button>
-        <button><FontAwesomeIcon icon={faVolumeUp} /></button>
       </div>
     );
   }
