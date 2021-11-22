@@ -48,7 +48,7 @@ Basicly copied from my teacher @margittennosaar
 
 ## Some stuff to remember
 
-> npm i --save @fortawesome/fontawesome-svg-core
+> `npm i --save @fortawesome/fontawesome-svg-core`
 > npm install --save @fortawesome/free-solid-svg-icons
 > npm install --save @fortawesome/react-fontawesome
 
