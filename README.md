@@ -20,6 +20,9 @@ Screenshots & video clip of game
 ![screenshot1](./src/assets/pictures/Screenshot1.png)
 ![screenshot2](./src/assets/pictures/Screenshot2.png)
 
+https://user-images.githubusercontent.com/88388526/142942005-7b74cf2a-5e84-464e-96ff-65cfc88fddb6.mov
+
+
 ## Usage
 
 Enjoy playing:
@@ -28,7 +31,6 @@ Enjoy playing:
 - try to catch next button to be pressed before next is activated
 - if you fail or there will be 5 unpressed "buttons" the game will end
 
-“Sound effects obtained from https://www.zapsplat.com“
 
 ## Credits for sound effects
 
