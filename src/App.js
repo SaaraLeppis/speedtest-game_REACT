@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Circle from "./Circle";
-import "./App.css";
 import { circles } from "./circles";
 import Gameover from "./Gameover";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,7 +11,6 @@ import endSound from "./assets/sounds/complete.wav"
 const getRandInteger = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min)
 };
-let kierrokset = [];
 let backgroundSound = new Audio(backgroundMusic);
 let click = new Audio(clickSound);
 let end = new Audio(endSound);
@@ -31,7 +29,9 @@ class App extends Component {
   };
   timer = undefined;
 
+
   clickHandler = (id) => {
+    click.currentTime = 0;
     click.play();
     console.log("you clicked: ", id);
 
@@ -68,6 +68,7 @@ class App extends Component {
   }
 
   startHandler = () => {
+    backgroundSound.currentTime = 0;
     backgroundSound.play();
     this.nextCircle();
     this.setState({

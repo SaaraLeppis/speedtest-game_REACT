@@ -16,7 +16,9 @@ How to add sound and pictures.
 
 ## Visuals
 
--[] screenshots will be here
+Screenshots & video clip of game
+![screenshot1](./src/assets/pictures/Screenshot1.png)
+![screenshot2](./src/assets/pictures/Screenshot2.png)
 
 ## Usage
 
