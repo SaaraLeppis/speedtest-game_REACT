@@ -24,6 +24,8 @@ https://user-images.githubusercontent.com/88388526/142942005-7b74cf2a-5e84-464e-
 
 ## Usage
 
+run `npm install`
+
 Enjoy playing:
 
 - press start to start the game
@@ -58,8 +60,11 @@ Basicly copied from my teacher @margittennosaar
 >
 > `npm install --save @fortawesome/react-fontawesome`
 
-> `import ReactDOM from 'react-dom'`
-> `import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'`
-> `import { faCoffee } from '@fortawesome/free-solid-svg-icons'`
+> `import ReactDOM from 'react-dom'` > `import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'` > `import { faCoffee } from '@fortawesome/free-solid-svg-icons'`
 
 > `const element = <FontAwesomeIcon icon={faCoffee} />`
+
+### fixing problems before re-install
+
+To fix the dependency tree, try following the steps below in the exact order: 1. Delete package-lock.json (not package.json!) and/or yarn.lock in your project folder. 2. Delete node_modules in your project folder. 3. Remove "webpack" from dependencies and/or devDependencies in the package.json file in your project folder. 4. Run npm install or yarn, depending on the package manager you use.
+_instructions from netlify_
