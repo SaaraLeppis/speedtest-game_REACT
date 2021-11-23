@@ -22,7 +22,6 @@ Screenshots & video clip of game
 
 https://user-images.githubusercontent.com/88388526/142942005-7b74cf2a-5e84-464e-96ff-65cfc88fddb6.mov
 
-
 ## Usage
 
 Enjoy playing:
@@ -30,12 +29,17 @@ Enjoy playing:
 - press start to start the game
 - try to catch next button to be pressed before next is activated
 - if you fail or there will be 5 unpressed "buttons" the game will end
+- and if you really want, you can always stop the gane from stop button
 
+### Further development
+
+- Mute button
+- Remembering the sequens
 
 ## Credits for sound effects
 
 Sounds from opengameart.org
-["Happy Adveture (Loop)" by TinyWorlds licensed CC0](https://opengameart.org/content/happy-adventure-loop) 
+["Happy Adveture (Loop)" by TinyWorlds licensed CC0](https://opengameart.org/content/happy-adventure-loop)
 
 ["Cute Mission Complete: complete.wav" by Fupi licenced CC0](https://opengameart.org/content/cute-mission-complete)
 
@@ -49,13 +53,13 @@ Basicly copied from my teacher @margittennosaar
 ## Some stuff to remember
 
 > `npm i --save @fortawesome/fontawesome-svg-core`
-> 
+>
 > `npm install --save @fortawesome/free-solid-svg-icons`
-> 
+>
 > `npm install --save @fortawesome/react-fontawesome`
 
-> `import ReactDOM from 'react-dom'` 
-> `import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'` 
-> `import { faCoffee } from '@fortawesome/free-solid-svg-icons'` 
+> `import ReactDOM from 'react-dom'`
+> `import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'`
+> `import { faCoffee } from '@fortawesome/free-solid-svg-icons'`
 
 > `const element = <FontAwesomeIcon icon={faCoffee} />`
