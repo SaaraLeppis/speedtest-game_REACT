@@ -16,8 +16,8 @@ const Gameover = (props) => {
                 <p className="score">Your score: <span>{props.score}</span></p>
 
                 {
-                    result < 80 ? <p>Little bit like <span role="img" aria-label="snail"> 🐌</span></p>
-                        : result > 80 && result < 120 ? <p> Wow <span role="img" aria-label="flame"> 🔥 </span></p>
+                    result < 100 ? <p>Little bit like <span role="img" aria-label="snail"> 🐌</span></p>
+                        : result > 100 && result < 180 ? <p> Wow <span role="img" aria-label="flame"> 🔥 </span></p>
                             : <p><span role="img" aria-label="flames">⚡⚡</span>That was great<span role="img" aria-label="salamat">⚡⚡</span></p>
                 }
                 <p className="comment"></p>
