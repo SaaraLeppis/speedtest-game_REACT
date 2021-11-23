@@ -129,7 +129,7 @@ button:hover {
 }
 
 /* === MULTIMEDIA === */
-@media (max-width: 736px) {
+@media (max-width: 750px) {
   h1,
   h2 {
     font-size: 2em;
